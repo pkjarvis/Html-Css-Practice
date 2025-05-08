@@ -288,12 +288,104 @@ header .navbar{
     font-weight: var(--font-weight-semibold);
 }
 
+/* Testimonial section styling */
+
+
+
+.testimonials-section{
+    padding:50px 0 100px;
+    background: var(--light-pink-color);
+}
+
+
+.testimonials-section .testimonials{
+    display: flex;
+    padding: 35px;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.testimonials-section .slider-wrapper{
+    overflow: hidden;
+    margin:0 60px 50px;
+}
+
+
+.testimonials-section .testimonials .user-image{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--border-raidus-circle);
+    margin-bottom: 50px;
+}
+
+.testimonials-section .testimonials .name{
+    margin-bottom: 16px;
+    font-size: var(--font-size-m);
+}
+
+.testimonials-section .testimonials .feedback{
+    line-height: 25px;
+
+}
+
+.testimonials-section .swiper-pagination-bullet{
+    width: 15px;
+    height: 15px;
+    opacity: 1;
+    background: var(--secondary-color);
+}
+.testimonials-section :is(.swiper-button-prev,.swiper-button-next){
+    color:var(--secondary-color);
+    transition: 0.3s ease;
+}
+.testimonials-section :is(.swiper-button-prev,.swiper-button-next):hover{
+    color:var(--primary-color);
+}
+
+
+/* Gallery Section Styling */
+.gallery-section{
+    padding: 50px 0 100px;
+}
+
+/* .gallery-section .gallery-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap:32px;
+} */
+
+
+.gallery-section .gallery-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:50px;
+}
+
+.gallery-section .gallery-list .gallery-item img{
+    width: 100%;height: 100%;
+    border-radius: var(--border-raidus-m);
+
+}
+
+.gallery-section .gallery-list .gallery-item img:hover{
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}
+
+
+
+
+
 /* Responsive media query for max-width:1024 */
 @media screen and (max-width:1024){
     .menu-section .menu-list .menu-item{
        display: grid;
        grid-template-columns: repeat(3,1fr);
     }
+  
    
 }
 
@@ -406,7 +498,11 @@ header .navbar{
         grid-template-columns: repeat(2,1fr);
     }
 
-   
+    .gallery-section .gallery-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap:30px;
+    }
 
 
 }
@@ -418,4 +514,15 @@ header .navbar{
         display: grid;
         grid-template-columns: repeat(1,1fr);
     }
+    .testimonials-section :is(.swiper-button-prev,.swiper-button-next){
+        visibility: hidden;
+    }
+
+    .gallery-section .gallery-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:30px;
+    }
+
+   
 }
